@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+  <div class="container mt-5 mb-4">
+    <h3>UIpdate task:</h3>
+    <form action="/update/{{row.sno}}" method="POST">
+      <div class="mb-3">
+        <label for="title" class="form-label">ToDo title</label>
+        <input type="text" class="form-control" name="title" value={{row.title}} id="title" placeholder="Mow the lawn">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">ToDO description</label>
+        <input type="text" class="form-control" name="desc" value={{row.desc}} id="desc" rows="3">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+  </div>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+{% endblock body %}
